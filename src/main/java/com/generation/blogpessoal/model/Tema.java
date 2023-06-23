@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -22,7 +23,7 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull(message = "Este campo DESCRIÇÃO é de preenchimento obrigatório")
+	@NotBlank(message = "Este campo DESCRIÇÃO é de preenchimento obrigatório")
 	private String descricao;
 	
 	public List<Postagem> getPostagem() {
